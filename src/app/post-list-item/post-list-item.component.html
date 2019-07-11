@@ -1,0 +1,15 @@
+<div class="card-body" [ngClass]="post.loveIts > 0 ? 'liked' : (post.loveIts < 0 ? 'not_liked' : 'bg-default')">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h3>{{post.title}}</h3>
+    </div>
+    <div>
+      <p class="text-muted font-italic">{{post.createdAt | date:'dd/MM/yyyy H:mm'}}</p>
+    </div>
+  </div>
+  <p>{{post.content}}</p>
+  <div class="btn-group">
+    <button type="button" class="btn btn-success" (click)="liked()">Love it</button>
+    <button type="button" class="btn btn-danger" (click)="not_liked()">Don't love it</button>
+  </div>
+</div>
